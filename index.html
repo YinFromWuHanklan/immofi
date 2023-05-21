@@ -8,66 +8,54 @@
 </head>
 <body>
     <h1>ImmoFi &ndash; dein Immobilienfinanzierungsrechner</h1>
-    <form action="">
+    <form action="" method="get" id="preisrechner">
         <label for="kaufpreis">Kaufpreis:</label>
         <input type="text" name="kaufpreis" id="kaufpreis"><br><br>
         <label for="eigenkapital">Eigenkapital:</label>
         <input type="text" name="eigenkapital" id="eigenkapital"><br><br>
-        <label for="sollzins">Sollzins (bei 10 Jahre Zinsbindung):</label>
+        <label for="sollzins">Sollzins (bei 10 Jahre Zinsbindung) p.a.</p>:</label>
         <input type="text" name="sollzins" id="sollzins"><br><br>
         <label for="region">Region:</label>
         <select name="region" id="region">
-            <option value="0,05">Baden-Württemberg</option>
-            <option value="0,035">Bayern</option>
-            <option value="0,06">Berlin</option>
-            <option value="0,065">Brandenburg</option>
-            <option value="0,05">Bremen</option>
-            <option value="0,055">Hamburg</option>
-            <option value="0,06">Hessen</option>
-            <option value="0,06">Mecklenburg-Vorpommern</option>
-            <option value="0,05">Niedersachsen</option>
-            <option value="0,065">Nordrhein-Westfalen</option>
-            <option value="0,05">Rheinland-Pfalz</option>
-            <option value="0,065">Saarland</option>
-            <option value="0,055">Sachsen</option>
-            <option value="0,05">Sachsen-Anhalt</option>
-            <option value="0,065">Schleswig-Holstein</option>
-            <option value="0,065">Thüringen</option>
+            <option value="0.05">Baden-Württemberg</option>
+            <option value="0.035" selected>Bayern</option>
+            <option value="0.06">Berlin</option>
+            <option value="0.065">Brandenburg</option>
+            <option value="0.05">Bremen</option>
+            <option value="0.055">Hamburg</option>
+            <option value="0.06">Hessen</option>
+            <option value="0.06">Mecklenburg-Vorpommern</option>
+            <option value="0.05">Niedersachsen</option>
+            <option value="0.065">Nordrhein-Westfalen</option>
+            <option value="0.05">Rheinland-Pfalz</option>
+            <option value="0.065">Saarland</option>
+            <option value="0.055">Sachsen</option>
+            <option value="0.05">Sachsen-Anhalt</option>
+            <option value="0.065">Schleswig-Holstein</option>
+            <option value="0.065">Thüringen</option>
         </select><br>
         <p>Makler?</p>
         <input type="radio" name="maklerprovision" id="makler" value="0,0357">
         <label for="makler">Ja</label>
         <input type="radio" name="maklerprovision" id="makler" value="0">
-        <label for="makler">Nein</label>
+        <label for="makler">Nein</label><br><br>
 
-        <p>Tilgungsrate</p>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,01">
-        <label for="tilgung">1,0%</label><br>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,015">
-        <label for="tilgung">1,5%</label><br>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,02" checked>
-        <label for="tilgung">2,0%</label><br>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,025">
-        <label for="tilgung">2,5%</label><br>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,03">
-        <label for="tilgung">3,0%</label><br>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,035">
-        <label for="tilgung">3,5%</label><br>
-        <input type="radio" name="tilgungsrate" id="tilgung" value="0,04">
-        <label for="tilgung">4,0%</label><br><br>
-        <input type="submit" value="Jetzt berechnen">
+        <label for="tilgung">Tilgungsrate:</label>
+        <select name="tilgung" id="tilgung">
+            <option value="0.01">1,0%</option>
+            <option value="0.015">1,5%</option>
+            <option value="0.02" selected>2,0%</option>
+            <option value="0.025">2,5%</option>
+            <option value="0.03">3,0%</option>
+            <option value="0.035">3,5%</option>
+            <option value="0.04">4,0%</option>
+        </select><br><br>
+        <input type="submit" value="Jetzt berechnen" onclick="testFunction()">
     </form>
 
-    <div>
-        <p>Kaufpreis: {{ Kaufpreis }}</p>
-        <p>Kaufnebenkosten: {{ Kaufpreis + Notarkosten KP * 0,015 + Grunderwerbssteuer Bundesland * KP + Grundbucheintrag KP * 0,005 + Makler KP * 0,0357 }} xx%</p>
-        <p>Eigenkapital: {{ Eigenkapital }} xx%</p>
-        <p>Nettodarlehen: {{ Kaufpreis + Kaufnebenkosten - Eigenkapital }}</p>
-        <p>Geschätzte monatliche Rate bei {{ sollzins }}: {{}}</p>
+    <div class="result">
+        
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
-
-<!-- Zusatz: Kann ich mir das leisten? monatl. Belastung darf nicht höher als 30-40% des Nettoeinkommens sein. Kreditbelastung in % zum Nettoeinkommen monatl. output ja oder nein -->
