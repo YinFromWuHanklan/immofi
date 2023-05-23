@@ -3,27 +3,43 @@ let kaufpreisrechner = document.querySelector('#preisrechner');
 kaufpreisrechner.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const neukaufpreis = document.querySelector('#kaufpreis').value;
-    
-    const kaufpreisText = `Kaufpreis: ${neukaufpreis}€`;
+    const kp = document.querySelector('#kaufpreis').value;
+    const ek = document.querySelector('#eigenkapital').value;
+    const sz = document.querySelector('#sollzins').value;
+    const bl = document.querySelector('#bundesland').value;
+    const mk = document.querySelector('#makler').value;
+    const tg = document.querySelector('#tilgung').value;
 
-    document.querySelector('.result').append(kaufpreisText);
+    const nk = (+kp)*0.015+(+kp)*0.005+(+kp)*(+mk)+(+kp)*(+bl);
 
+    const dl = (+kp)+nk-(+ek);
 
-    // Notarkosten
-    function notarKosten(neukaufpreis) {
-        let notarResult = neukaufpreis * 0.015;
-        return notarResult;
-    }
+    const mb = ((+tg)+(+sz/100))*dl/12;
+
+    const p = document.createElement('p');
+    const summary = `
+        <p>Monatliche Belastung: ${mb}€</p>
+        <p>Kaufpreis: ${kp}€</p>
+        <p>Kaufnebenkosten: ${nk}€ <span>${nk/kp*100}%</span></p>
+        <p>Eigenkapital: ${ek}€ <span>${ek/kp*100}%</span></p>
+        <p>Nettodarlehen: ${dl}€</p>
+    `;
+
+    const displaySum = document.querySelector('.result');
+
+    displaySum.innerHTML = summary;
 });
+
 
 
 // Berechnungen:
 
 // Kaufnebenkosten: Summe aus 
+// Fix:
 // - Notarkosten = KP * 0.015
-// - Grunderwerbssteuer = KP * region 
 // - Grundbucheintrag = KP * 0.005
+// Variabel:
+// - Grunderwerbssteuer = KP * region 
 // - Makler = KP * 0.0357
 
 // Nettodarlehen = KP + Kaufnebenkosten - Eigenkapital
