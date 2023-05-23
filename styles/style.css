@@ -1,5 +1,27 @@
+body {
+  background-color: #18222b;
+}
+
+.wrapper {
+  padding: 2rem;
+}
+
 h1 {
-  color: red;
+  color: #3d96a8;
+}
+
+p,
+label {
+  color: #e4e7eb;
+}
+
+.result p.main-sum {
+  border: 1px solid #333;
+  padding: 2rem;
+}
+.result p span {
+  color: grey;
+  font-size: 0.8rem;
 }
 
 /*# sourceMappingURL=style.css.map */

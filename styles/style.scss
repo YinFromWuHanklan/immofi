@@ -1,3 +1,39 @@
+// Variables
+
+$primary: #3d96a8;
+$secondary: #e86d25;
+$font-color: #e4e7eb;
+$bg-color: #18222b;
+$bg-lg-color: #305375;
+
+body {
+    background-color: $bg-color;
+}
+
+.wrapper {
+    padding: 2rem;
+}
+
 h1 {
-    color: red;
+    color: $primary;
+}
+
+p,
+label {
+    color: $font-color;
+}
+
+
+.result {
+    p {
+        &.main-sum {
+            border: 1px solid #333;
+            padding: 2rem;
+        }
+
+        span {
+            color: grey;
+            font-size: 0.8rem;
+        }
+    }
 }

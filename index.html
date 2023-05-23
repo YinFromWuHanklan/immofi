@@ -9,53 +9,53 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h1>ImmoFi &ndash; dein Immobilienfinanzierungsrechner</h1>
-    <form action="" method="get" id="preisrechner">
-        <label for="kaufpreis">Kaufpreis:</label>
-        <input type="text" name="kaufpreis" id="kaufpreis"><br><br>
-        <label for="eigenkapital">Eigenkapital:</label>
-        <input type="text" name="eigenkapital" id="eigenkapital"><br><br>
-        <label for="sollzins">Sollzins (bei 10 Jahre Zinsbindung) p.a.</p>:</label>
-        <input type="text" name="sollzins" id="sollzins">%<br><br>
-        <label for="bundesland">Bundesland:</label>
-        <select name="bundesland" id="bundesland">
-            <option value=0.05>Baden-Württemberg</option>
-            <option value=0.035 selected>Bayern</option>
-            <option value=0.06>Berlin</option>
-            <option value=0.065>Brandenburg</option>
-            <option value=0.05>Bremen</option>
-            <option value=0.055>Hamburg</option>
-            <option value=0.06>Hessen</option>
-            <option value=0.06>Mecklenburg-Vorpommern</option>
-            <option value=0.05>Niedersachsen</option>
-            <option value=0.065>Nordrhein-Westfalen</option>
-            <option value=0.05>Rheinland-Pfalz</option>
-            <option value=0.065>Saarland</option>
-            <option value=0.055>Sachsen</option>
-            <option value=0.05>Sachsen-Anhalt</option>
-            <option value=0.065>Schleswig-Holstein</option>
-            <option value=0.065>Thüringen</option>
-        </select><br>
-        <p>Makler?</p>
-        <input type="radio" name="maklerprovision" id="makler" value=0.0357>
-        <label for="makler">Ja</label>
-        <input type="radio" name="maklerprovision" id="makler" value=0 checked>
-        <label for="makler">Nein</label><br><br>
-
-        <label for="tilgung">Tilgungsrate:</label>
-        <select name="tilgung" id="tilgung">
-            <option value=0.01>1,0%</option>
-            <option value=0.015>1,5%</option>
-            <option value=0.02 selected>2,0%</option>
-            <option value=0.025>2,5%</option>
-            <option value=0.03>3,0%</option>
-            <option value=0.035>3,5%</option>
-            <option value=0.04>4,0%</option>
-        </select><br><br>
-        <input type="submit" value="Jetzt berechnen">
-    </form>
-
-    <div class="result"></div>
+    <div class="wrapper">
+        <h1>ImmoFi &ndash; dein Immobilienfinanzierungsrechner</h1>
+        <form action="" method="get" id="preisrechner">
+            <label for="kaufpreis">Kaufpreis:</label>
+            <input type="text" name="kaufpreis" id="kaufpreis"><br><br>
+            <label for="eigenkapital">Eigenkapital:</label>
+            <input type="text" name="eigenkapital" id="eigenkapital"><br><br>
+            <label for="sollzins">Sollzins (bei 10 Jahre Zinsbindung) p.a.</p>:</label>
+            <input type="text" name="sollzins" id="sollzins">%<br><br>
+            <label for="bundesland">Bundesland:</label>
+            <select name="bundesland" id="bundesland">
+                <option value=0.05>Baden-Württemberg</option>
+                <option value=0.035 selected>Bayern</option>
+                <option value=0.06>Berlin</option>
+                <option value=0.065>Brandenburg</option>
+                <option value=0.05>Bremen</option>
+                <option value=0.055>Hamburg</option>
+                <option value=0.06>Hessen</option>
+                <option value=0.06>Mecklenburg-Vorpommern</option>
+                <option value=0.05>Niedersachsen</option>
+                <option value=0.065>Nordrhein-Westfalen</option>
+                <option value=0.05>Rheinland-Pfalz</option>
+                <option value=0.065>Saarland</option>
+                <option value=0.055>Sachsen</option>
+                <option value=0.05>Sachsen-Anhalt</option>
+                <option value=0.065>Schleswig-Holstein</option>
+                <option value=0.065>Thüringen</option>
+            </select><br>
+            <p>Makler?</p>
+            <input type="radio" name="maklerprovision" id="makler" value=0.0357>
+            <label for="makler">Ja</label>
+            <input type="radio" name="maklerprovision" id="makler" value=0 checked>
+            <label for="makler">Nein</label><br><br>
+            <label for="tilgung">Tilgungsrate:</label>
+            <select name="tilgung" id="tilgung">
+                <option value=0.01>1,0%</option>
+                <option value=0.015>1,5%</option>
+                <option value=0.02 selected>2,0%</option>
+                <option value=0.025>2,5%</option>
+                <option value=0.03>3,0%</option>
+                <option value=0.035>3,5%</option>
+                <option value=0.04>4,0%</option>
+            </select><br><br>
+            <input type="submit" value="Jetzt berechnen">
+        </form>
+        <div class="result"></div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
