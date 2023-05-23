@@ -1,10 +1,13 @@
 // Variables
 
 $primary: #3d96a8;
+$primary-light: #55a5b6;
 $secondary: #e86d25;
 $font-color: #e4e7eb;
+$font-color-soft: #9ea0a2;
 $bg-color: #18222b;
 $bg-lg-color: #305375;
+$white: #FFF;
 
 body {
     background-color: $bg-color;
@@ -19,20 +22,35 @@ h1 {
 }
 
 p,
-label {
+form {
     color: $font-color;
+}
+
+input[type=submit] {
+    background-color: $primary;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    color: $white;
+    border-radius: 2rem;
+    border-style: none;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+        background: $primary-light;
+    }
 }
 
 
 .result {
     p {
         &.main-sum {
-            border: 1px solid #333;
+            border: 1px solid $bg-lg-color;
             padding: 2rem;
         }
 
         span {
-            color: grey;
+            color: $font-color-soft;
             font-size: 0.8rem;
         }
     }

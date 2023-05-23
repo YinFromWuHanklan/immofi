@@ -11,16 +11,29 @@ h1 {
 }
 
 p,
-label {
+form {
   color: #e4e7eb;
 }
 
+input[type=submit] {
+  background-color: #3d96a8;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  color: #FFF;
+  border-radius: 2rem;
+  border-style: none;
+  cursor: pointer;
+}
+input[type=submit]:hover, input[type=submit]:focus {
+  background: #55a5b6;
+}
+
 .result p.main-sum {
-  border: 1px solid #333;
+  border: 1px solid #305375;
   padding: 2rem;
 }
 .result p span {
-  color: grey;
+  color: #9ea0a2;
   font-size: 0.8rem;
 }
 
