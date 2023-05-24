@@ -1,3 +1,5 @@
+@import url('../fonts/');
+
 // Variables
 
 $primary: #3d96a8;
@@ -6,8 +8,17 @@ $secondary: #e86d25;
 $font-color: #e4e7eb;
 $font-color-soft: #9ea0a2;
 $bg-color: #18222b;
+$bg-lgter-color: #074559;
 $bg-lg-color: #305375;
 $white: #FFF;
+
+$font: 'Raleway', sans-serif;
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
 
 body {
     background-color: $bg-color;
@@ -19,11 +30,18 @@ body {
 
 h1 {
     color: $primary;
+    font-family: $font;
+    font-weight: 100;
+    span {
+        font-size: 1.5rem;
+    }
 }
 
 p,
 form {
     color: $font-color;
+    font-family: $font;
+    font-weight: 100;
 }
 
 input[type=submit] {
@@ -39,6 +57,16 @@ input[type=submit] {
     &:focus {
         background: $primary-light;
     }
+}
+
+input,
+select {
+    background-color: $bg-lgter-color;
+    color: $font-color;
+    border: none;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    padding-left: 0.8rem;
 }
 
 

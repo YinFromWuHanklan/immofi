@@ -1,3 +1,10 @@
+@import url("../fonts/");
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #18222b;
 }
@@ -8,11 +15,18 @@ body {
 
 h1 {
   color: #3d96a8;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
+}
+h1 span {
+  font-size: 1.5rem;
 }
 
 p,
 form {
   color: #e4e7eb;
+  font-family: "Raleway", sans-serif;
+  font-weight: 100;
 }
 
 input[type=submit] {
@@ -26,6 +40,16 @@ input[type=submit] {
 }
 input[type=submit]:hover, input[type=submit]:focus {
   background: #55a5b6;
+}
+
+input,
+select {
+  background-color: #074559;
+  color: #e4e7eb;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.5rem;
+  padding-left: 0.8rem;
 }
 
 .result p.main-sum {
