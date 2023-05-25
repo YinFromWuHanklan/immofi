@@ -3,25 +3,43 @@ let kaufpreisrechner = document.querySelector('#preisrechner');
 kaufpreisrechner.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const kp = document.querySelector('#kaufpreis').value;
-    const ek = document.querySelector('#eigenkapital').value;
-    const sz = document.querySelector('#sollzins').value;
-    const bl = document.querySelector('#bundesland').value;
-    const mk = document.querySelector('input[name="maklerprovision"]:checked').value;
-    const tg = document.querySelector('#tilgung').value;
+    let kp = document.querySelector('#kaufpreis').value;
+    let ek = document.querySelector('#eigenkapital').value;
+    let sz = document.querySelector('#sollzins').value;
+    let bl = document.querySelector('#bundesland').value;
+    let mk = document.querySelector('input[name="maklerprovision"]:checked').value;
+    let tg = document.querySelector('#tilgung').value;
 
-    const nk = (+kp)*0.015+(+kp)*0.005+(+kp)*(+mk)+(+kp)*(+bl);
+    sz = sz.replace(/,/g, '.');
 
-    const dl = (+kp)+nk-(+ek);
+    kp = parseFloat(kp);
+    ek = parseFloat(ek);
+    sz = parseFloat(sz);
+    bl = parseFloat(bl);
+    mk = parseFloat(mk);
+    tg = parseFloat(tg);
 
-    const mb = ((+tg)+(+sz/100))*dl/12;
+    let nk = kp*0.015+kp*0.005+kp*mk+kp*bl;
+
+    let dl = kp+nk-ek;
+
+    let mb = (tg+sz/100)*dl/12;
+
+    let nk100 = nk/kp*100;
+    let ek100 = ek/kp*100;
+
+    mb = mb.toFixed(2).replace('.', ',');
+    nk = nk.toFixed(2).replace('.', ',');
+    dl = dl.toFixed(2).replace('.', ',');
+    nk100 = nk100.toFixed(2).replace('.', ',');
+    ek100 = ek100.toFixed(2).replace('.', ',');
 
     const p = document.createElement('p');
     const summary = `
         <p class="main-sum">Monatliche Belastung: ${mb}€</p>
         <p>Kaufpreis: ${kp}€</p>
-        <p>Kaufnebenkosten: ${nk}€ <span>${nk/kp*100}%</span></p>
-        <p>Eigenkapital: ${ek}€ <span>${ek/kp*100}%</span></p>
+        <p>Kaufnebenkosten: ${nk}€ <span>${nk100}%</span></p>
+        <p>Eigenkapital: ${ek}€ <span>${ek100}%</span></p>
         <p>Nettodarlehen: ${dl}€</p>
     `;
 
