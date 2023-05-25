@@ -36,7 +36,7 @@ kaufpreisrechner.addEventListener('submit', (e) => {
 
     const p = document.createElement('p');
     const summary = `
-        <p class="main-sum">Monatliche Belastung: ${mb}€</p>
+        <p class="main-sum">${mb}€<br><span>Monatliche Belastung</span></p>
         <p>Kaufpreis: ${kp}€</p>
         <p>Kaufnebenkosten: ${nk}€ <span>${nk100}%</span></p>
         <p>Eigenkapital: ${ek}€ <span>${ek100}%</span></p>

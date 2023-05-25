@@ -30,16 +30,16 @@ form {
 }
 
 input[type=submit] {
-  background-color: #3d96a8;
+  background-color: #074559;
   margin: 1.5rem 0;
   padding: 1rem;
   color: #FFF;
   border-radius: 2rem;
-  border-style: none;
+  border: 2px solid #337c8b;
   cursor: pointer;
 }
 input[type=submit]:hover, input[type=submit]:focus {
-  background: #55a5b6;
+  border: 2px solid #55a5b6;
 }
 
 input,
@@ -53,8 +53,16 @@ select {
 }
 
 .result p.main-sum {
-  border: 1px solid #305375;
+  border: 1px solid #3d96a8;
   padding: 2rem;
+  border-radius: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #e4e7eb;
+}
+.result p.main-sum span {
+  font-size: 0.8rem;
+  color: #9ea0a2;
 }
 .result p span {
   color: #9ea0a2;

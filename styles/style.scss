@@ -3,6 +3,7 @@
 // Variables
 
 $primary: #3d96a8;
+$primary-dark: #337c8b;
 $primary-light: #55a5b6;
 $secondary: #e86d25;
 $font-color: #e4e7eb;
@@ -45,17 +46,17 @@ form {
 }
 
 input[type=submit] {
-    background-color: $primary;
+    background-color: $bg-lgter-color;
     margin: 1.5rem 0;
     padding: 1rem;
     color: $white;
     border-radius: 2rem;
-    border-style: none;
+    border: 2px solid $primary-dark;
     cursor: pointer;
 
     &:hover,
     &:focus {
-        background: $primary-light;
+        border: 2px solid $primary-light;
     }
 }
 
@@ -69,12 +70,20 @@ select {
     padding-left: 0.8rem;
 }
 
-
 .result {
     p {
         &.main-sum {
-            border: 1px solid $bg-lg-color;
+            border: 1px solid $primary;
             padding: 2rem;
+            border-radius: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: $font-color;
+
+            span {
+                font-size: 0.8rem;
+                color: $font-color-soft;
+            }
         }
 
         span {
