@@ -11,6 +11,15 @@ body {
 
 .wrapper {
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .wrapper {
+    width: 40%;
+  }
 }
 
 h1 {
